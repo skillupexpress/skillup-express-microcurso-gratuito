@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microcurso Gratuito: Cómo Estudiar y Aprovechar Contenidos Cortos - SkillUp Express</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+
+        .module-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .module-section h2 {
+            color: var(--accent-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .module-section h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .module-section p, .module-section ul {
+            margin-bottom: 15px;
+        }
+
+        .module-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .example-box {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .example-box strong {
+            color: var(--primary-color);
+        }
+
+        .quiz-section {
+            background-color: #e6f7ff; /* Light blue for quiz */
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .quiz-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .quiz-question label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .quiz-question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .quiz-feedback {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .quiz-feedback.correct {
+            color: var(--accent-color);
+        }
+
+        .quiz-feedback.incorrect {
+            color: #dc3545; /* Red for incorrect */
+        }
+
+        .btn-quiz {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-quiz:hover {
+            background-color: #0056b3;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            opacity: 0;
+            animation: fall 3s forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+
+        .closing-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .closing-section h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .btn-community {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-community:hover {
+            background-color: #218838;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .download-link:hover {
+            color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px auto;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .module-section h2 {
+                font-size: 1.5em;
+            }
+            .module-section h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Microcurso Gratuito: Cómo Estudiar y Aprovechar Contenidos Cortos</h1>
+            <p>¿Tenés poco tiempo, pero querés aprender cosas que realmente te ayuden a salir adelante?</p>
+            <p>Bienvenido a SkillUp Express. Este es un microcurso gratuito que te va a enseñar cómo aprovechar al máximo esos contenidos cortos que ves todos los días: videos rápidos, posts, reels, lo que sea.</p>
+            <p>Si estás emprendiendo, si querés empezar algo propio, o simplemente querés dejar de sentir que aprendés y no hacés nada… este curso es para vos.</p>
+            <p>En solo unos minutos vas a aprender técnicas para leer más rápido, tomar mejores notas, aplicar lo que ves en redes y convertir todo eso en acciones que te acerquen a tus metas.</p>
+            <p>Este microcurso es solo el inicio. En SkillUp Express te vamos a enseñar cosas útiles, accionables y sin paja para ayudarte a crecer en tu camino digital.</p>
+            <p>Empecemos ya. Que la excusa sea corta, como el contenido.</p>
+        </header>
+
+        <section class="module-section">
+            <h2>MÓDULO 1: Técnica de Lectura Rápida Digital</h2>
+            <h3>Título: “Leé más, mejor y más rápido”</h3>
+            <p><strong>Objetivo:</strong> Enseñar a escanear y detectar lo importante en segundos.</p>
+            
+            <h3>Contenido:</h3>
+            <h4>Técnica “SKIM + FOCUS”:</h4>
+            <ul>
+                <li>Escaneá títulos, negritas y frases clave.</li>
+                <li>Elegí 1 idea clave a la que le des 100% de atención.</li>
+                <li>Ignorá el resto (no todo se procesa).</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>Ejemplo práctico:</strong><br>
+                “En un post de Instagram sobre marketing, escaneás y detectás: ‘3 formas de captar leads’. Te enfocás en una sola, por ejemplo, ‘Usar un lead magnet gratuito’. El resto lo ignorás por ahora.”
+            </div>
+        </section>
+
+        <section class="module-section">
+            <h2>MÓDULO 2: Toma de Notas Inteligente</h2>
+            <h3>Título: "Menos es más: Anotá para aplicar, no para guardar"</h3>
+            <p><strong>Frase clave:</strong> "Si anotás todo, no anotás nada."</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="microcourse_summary_image.png" alt="Resumen visual del método SKIM + FOCUS y 3 ideas - 1 acción" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <p style="font-size: 0.9em; color: #6c757d; margin-top: 10px;">Resumen Visual del Método</p>
+            </div>
+            
+            <h3>Contenido:</h3>
+            <h4>Técnica "3 ideas – 1 acción":</h4>
+            <ul>
+                <li>Anotá solo 3 puntos clave del contenido.</li>
+                <li>Bajo ellos, escribí una acción concreta que podrías aplicar hoy mismo.</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>Ejemplo:</strong><br>
+                Post: “Errores en TikTok Ads”<br>
+                ✅ Error 1: No usar subtítulos<br>
+                ✅ Error 2: Videos de más de 30s<br>
+                ✅ Error 3: No usar gancho en primeros 3s<br><br>
+                <strong>Acción:</strong> “Voy a rehacer mi video con subtítulos + gancho al inicio.”
+            </div>
+        </section>
+
+        <section class="module-section">
+            <h2>MÓDULO 3: Síntesis con Acción</h2>
+            <h3>Título: “Aplicalo o lo vas a olvidar”</h3>
+            <p><strong>Frase clave:</strong> “El contenido que no aplicás en 24h se evapora.”</p>
+            
+            <h3>Reto práctico:</h3>
+            <ul>
+                <li>Elegí un video, reel o post corto que hayas visto hoy.</li>
+                <li>Aplicá la técnica “3 ideas – 1 acción” y hacelo realidad hoy.</li>
+                <li>Luego, compartí tu resultado en la comunidad (Telegram o Discord).</li>
+            </ul>
+        </section>
+
+        <section class="quiz-section">
+            <h2>✅ EVALUACIÓN RÁPIDA (Opcional)</h2>
+            <div class="quiz-question">
+                <label>1. ¿Qué es la técnica “3 ideas – 1 acción”?</label>
+                <input type="radio" name="q1" value="a"> a) Anotar 3 ideas y 1 acción concreta.<br>
+                <input type="radio" name="q1" value="b"> b) Anotar 3 acciones y 1 idea clave.<br>
+                <input type="radio" name="q1" value="c"> c) Anotar 3 puntos y 1 resumen.<br>
+                <div id="feedback1" class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question">
+                <label>2. ¿Qué significa SKIM + FOCUS?</label>
+                <input type="radio" name="q2" value="a"> a) Leer todo rápido y luego enfocarse.<br>
+                <input type="radio" name="q2" value="b"> b) Escanear lo importante y enfocarse en una idea clave.<br>
+                <input type="radio" name="q2" value="c"> c) Ignorar todo y solo enfocarse en el título.<br>
+                <div id="feedback2" class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question">
+                <label>3. ¿Qué deberías hacer después de consumir un contenido de 5 minutos?</label>
+                <input type="radio" name="q3" value="a"> a) Guardarlo para verlo después.<br>
+                <input type="radio" name="q3" value="b"> b) Aplicar la técnica “3 ideas – 1 acción” inmediatamente.<br>
+                <input type="radio" name="q3" value="c"> c) Compartirlo con tus amigos.<br>
+                <div id="feedback3" class="quiz-feedback"></div>
+            </div>
+
+            <button class="btn-quiz" onclick="checkQuiz()">Ver Resultados</button>
+        </section>
+
+        <section class="closing-section">
+            <h2>🎉 CIERRE Y LLAMADO A LA ACCIÓN</h2>
+            <p>“Ahora ya sabés cómo estudiar mejor contenido corto.</p>
+            <p>Pero esto es solo el inicio. En los próximos microcursos vas a aprender herramientas reales para crecer tu emprendimiento digital paso a paso.”</p>
+            <p>“Unite a nuestra comunidad, contanos qué aprendiste y empezá a aplicar desde hoy.</p>
+            <p>Nos vemos en el siguiente curso.”</p>
+            <a href="https://forms.gle/SEyKXJLdR7rRSnq66" class="btn-community" target="_blank">Únete a la Lista de Espera</a>
+            <a href="#" class="btn-community">Únete a Nuestra Comunidad (Telegram/Discord)</a>
+            <a href="microcourse_free_content.pdf" class="download-link" download>Descarga el Resumen del Curso (PDF)</a>
+        </section>
+    </div>
+
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'b'
+            };
+            let correctCount = 0;
+
+            for (const q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${q.replace('q', '')}`);
+
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        feedbackElement.textContent = '¡Correcto!';
+                        feedbackElement.className = 'quiz-feedback correct';
+                        correctCount++;
+                    } else {
+                        feedbackElement.textContent = 'Incorrecto. La respuesta correcta es ' + answers[q].toUpperCase() + '.';
+                        feedbackElement.className = 'quiz-feedback incorrect';
+                    }
+                } else {
+                    feedbackElement.textContent = 'Por favor, selecciona una opción.';
+                    feedbackElement.className = 'quiz-feedback incorrect';
+                }
+            }
+
+            if (correctCount === Object.keys(answers).length) {
+                triggerConfetti();
+                displayMotivationalMessage();
+            }
+        }
+
+        function triggerConfetti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiContainer.appendChild(confetti);
+            }
+            setTimeout(() => {
+                confettiContainer.innerHTML = ''; // Clear confetti after animation
+            }, 3000);
+        }
+
+        function displayMotivationalMessage() {
+            const messages = [
+                "¡Felicidades! Has dominado el arte del microaprendizaje. ¡Tu camino al éxito digital acaba de acelerarse!",
+                "¡Impresionante! Cada pequeña píldora de conocimiento te acerca más a tus metas. ¡Sigue así!",
+                "¡Lo lograste! Este es solo el comienzo de tu transformación. ¡El futuro es tuyo!"
+            ];
+            const closingSection = document.querySelector('.closing-section h2');
+            closingSection.textContent = messages[Math.floor(Math.random() * messages.length)];
+        }
+    </script>
+</body>
+</html>
+
+
